@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Melvin Mejias | Healthcare Tech Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#050814;
+    --panel:#0f172a;
+    --muted:#9aa4b2;
+    --text:#e5e7eb;
+    --accent:#60a5fa;
+    --border:#1f2a3a;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter, sans-serif;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:140px 20px 90px;
+    background:radial-gradient(circle at top, #1a2a4a, var(--bg));
+    position:relative;
+    overflow:hidden;
+}
+
+/* FLOAT GLOW */
+.glow{
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:var(--accent);
+    filter:blur(140px);
+    opacity:0.12;
+    top:-100px;
+    left:50%;
+    transform:translateX(-50%);
+    animation:float 6s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateX(-50%) translateY(0);}
+    50%{transform:translateX(-50%) translateY(20px);}
+}
+
+.badge{
+    display:inline-block;
+    padding:6px 14px;
+    border:1px solid var(--border);
+    border-radius:999px;
+    font-size:12px;
+    color:var(--accent);
+    margin-bottom:18px;
+}
+
+h1{
+    font-size:58px;
+    letter-spacing:-2px;
+}
+
+.subtitle{
+    max-width:780px;
+    margin:14px auto 0;
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.7;
+}
+
+/* BUTTONS */
+.cta{
+    margin-top:26px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 18px;
+    border-radius:10px;
+    margin:5px;
+    font-size:14px;
+    font-weight:500;
+    text-decoration:none;
+    transition:0.2s;
+}
+
+.primary{
+    background:var(--accent);
+    color:#0b1220;
+}
+
+.primary:hover{
+    transform:scale(1.05);
+}
+
+.ghost{
+    border:1px solid var(--border);
+    color:var(--text);
+}
+
+.ghost:hover{
+    border-color:var(--accent);
+}
+
+/* LAYOUT */
+.container{
+    max-width:1050px;
+    margin:auto;
+    padding:20px;
+}
+
+section{
+    margin:65px 0;
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeUp 0.8s ease forwards;
+}
+
+section:nth-child(2){animation-delay:0.1s;}
+section:nth-child(3){animation-delay:0.2s;}
+section:nth-child(4){animation-delay:0.3s;}
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+h2{
+    font-size:13px;
+    letter-spacing:2px;
+    color:var(--accent);
+    margin-bottom:14px;
+}
+
+/* CARDS */
+.card{
+    background:linear-gradient(180deg,#0f172a,#0b1220);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:20px;
+    transition:0.25s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:var(--accent);
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+    gap:18px;
+}
+
+/* TEXT */
+.muted{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* TAGS */
+.tags span{
+    display:inline-block;
+    font-size:12px;
+    padding:6px 10px;
+    border-radius:999px;
+    border:1px solid var(--border);
+    margin:4px;
+    color:var(--muted);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:60px;
+    font-size:12px;
+    color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <div class="glow"></div>
+
+    <div class="badge">Healthcare • Tech • Automation Engineer</div>
+
+    <h1>Melvin Mejias</h1>
+
+    <p class="subtitle">
+        Building real-world healthcare systems using web development, AI concepts, and automation.
+        Focused on medical billing workflows and virtual assistant systems.
+    </p>
+
+    <div class="cta">
+        <a class="btn primary" href="https://github.com/JLaStRiD">GitHub</a>
+        <a class="btn ghost" href="https://jlastrid.github.io/jlast-rid-portfolio/">Live Portfolio</a>
+    </div>
+</div>
+
+<div class="container">
+
+    <section>
+        <h2>ABOUT</h2>
+        <div class="card muted">
+            I design and simulate real-world systems for healthcare workflows, combining medical billing knowledge,
+            virtual assistant skills, and modern web technologies to improve efficiency and automation.
+        </div>
+    </section>
+
+    <section>
+        <h2>SKILLS</h2>
+        <div class="card tags">
+            <span>Medical Billing</span>
+            <span>Virtual Assistant (TESDA)</span>
+            <span>HTML / CSS</span>
+            <span>Git & GitHub</span>
+            <span>Workflow Automation</span>
+            <span>AI Concepts</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>PROJECTS</h2>
+
+        <div class="grid">
+
+            <div class="card">
+                <strong>Online Boutique AI</strong>
+                <p class="muted">AI recommendation system learning project with UI structure.</p>
+            </div>
+
+            <div class="card">
+                <strong>MediFlow AI</strong>
+                <p class="muted">Healthcare workflow automation concept for clinic operations.</p>
+            </div>
+
+            <div class="card">
+                <strong>VA Automation System</strong>
+                <p class="muted">TESDA VA workflow simulation for productivity optimization.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>CONTACT</h2>
+        <div class="card muted">
+            GitHub: <a href="https://github.com/JLaStRiD">JLaStRiD</a><br>
+            LinkedIn: <a href="https://www.linkedin.com/in/melvin-mejias-b31219351">Profile</a><br>
+            Devpost: Coming soon
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    © 2026 Melvin Mejias • GOD MODE Portfolio System
+</footer>
+
+</body>
+  </html>
