@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediFlow AI Dashboard</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#0b1220;
+    color:#e5e7eb;
+}
+
+/* LAYOUT */
+.container{
+    display:flex;
+}
+
+/* SIDEBAR */
+.sidebar{
+    width:220px;
+    height:100vh;
+    background:#111827;
+    padding:20px;
+    position:fixed;
+}
+
+.sidebar h2{
+    color:#60a5fa;
+    font-size:18px;
+}
+
+.sidebar a{
+    display:block;
+    color:#9ca3af;
+    text-decoration:none;
+    margin:12px 0;
+    font-size:14px;
+}
+
+.sidebar a:hover{
+    color:#fff;
+}
+
+/* MAIN */
+.main{
+    margin-left:240px;
+    padding:20px;
+    width:100%;
+}
+
+/* TOP BAR */
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    background:#111827;
+    border-radius:10px;
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
+
+.card{
+    background:#111827;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid #1f2937;
+}
+
+/* TABLE */
+table{
+    width:100%;
+    margin-top:20px;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:12px;
+    border-bottom:1px solid #1f2937;
+    font-size:14px;
+}
+
+.status{
+    padding:5px 10px;
+    border-radius:8px;
+    font-size:12px;
+}
+
+.pending{background:#f59e0b;color:#000;}
+.processing{background:#3b82f6;}
+.done{background:#10b981;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>MediFlow AI</h2>
+
+    <a href="#">Dashboard</a>
+    <a href="#">Patients</a>
+    <a href="#">Billing</a>
+    <a href="#">Reports</a>
+    <a href="#">Settings</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <h3>Dashboard Overview</h3>
+        <button onclick="addPatient()" style="
+        padding:8px 12px;
+        background:#60a5fa;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;">
+        + Add Case
+        </button>
+    </div>
+
+    <!-- CARDS -->
+    <div class="cards">
+
+        <div class="card">
+            <h3>Total Patients</h3>
+            <p id="total">3</p>
+        </div>
+
+        <div class="card">
+            <h3>Processing</h3>
+            <p id="processing">1</p>
+        </div>
+
+        <div class="card">
+            <h3>Completed</h3>
+            <p id="done">1</p>
+        </div>
+
+    </div>
+
+    <!-- TABLE -->
+    <table>
+        <thead>
+            <tr>
+                <th>Patient</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="table">
+
+            <tr>
+                <td>John Doe</td>
+                <td><span class="status pending">Pending</span></td>
+            </tr>
+
+            <tr>
+                <td>Maria Cruz</td>
+                <td><span class="status processing">Processing</span></td>
+            </tr>
+
+            <tr>
+                <td>James Lee</td>
+                <td><span class="status done">Completed</span></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+</div>
+
+<script>
+function addPatient(){
+
+    let name = prompt("Enter patient name:");
+    if(!name) return;
+
+    let row = document.createElement("tr");
+
+    row.innerHTML = `
+        <td>${name}</td>
+        <td><span class="status pending">Pending</span></td>
+    `;
+
+    document.getElementById("table").appendChild(row);
+
+    let total = document.getElementById("total");
+    total.innerText = parseInt(total.innerText) + 1;
+}
+</script>
+
+</body>
+              </html>
