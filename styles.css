@@ -1,0 +1,42 @@
+body{
+    margin:0;
+    font-family:Inter, Arial;
+    background:#0b1220;
+    color:#e5e7eb;
+}
+
+a{
+    color:#60a5fa;
+    text-decoration:none;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px;
+    background:#111827;
+    border-bottom:1px solid #1f2937;
+}
+
+nav a{
+    margin:0 10px;
+    color:#e5e7eb;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+.card{
+    background:#111827;
+    padding:20px;
+    border-radius:12px;
+    margin:15px 0;
+    border:1px solid #1f2937;
+}
+
+h1,h2{
+    color:#60a5fa;
+}
